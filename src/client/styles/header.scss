@@ -1,0 +1,54 @@
+.header {
+  font-family: 'Oswald', sans-serif, Arial, Helvetica;
+  font-size: 6vw;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgb(250, 2, 2);
+  text-align: center;
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+  width: 100vw;
+  /*background-image: url('/website/images/thunderstorm-1768742_960_720.webp');
+    */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100%;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+}
+.subHeader {
+  font-family: 'Oswald', sans-serif, Arial, Helvetica;
+  font-size: 3vw;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+  width: 100vw;
+  /*background-image: url('/website/images/thunderstorm-1768742_960_720.webp');
+    */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100%;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif, Arial;
+  font-size: 5vw;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    margin-bottom: 50px;
+  }
+}

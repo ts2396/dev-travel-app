@@ -1,0 +1,52 @@
+body {
+  text-align: center;
+  font-family: 'Oswald', sans-serif, Arial, Helvetica;
+}
+
+#app {
+  flex: 1;
+  width: 100%;
+  background-color: steelblue;
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  font-family: sans-serif;
+  min-height: 1000px;
+}
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main {
+    width: 75%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: auto;
+  }
+
+  .title {
+    padding: 20px;
+    text-decoration: underline;
+  }
+  /* Reset style for HTML element on active to have no border*/
+  input:focus,
+  button:focus {
+    outline: none;
+  }
+
+
+@media (max-width: 1000px) {
+  #app {
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 0px;
+      min-height: 800px;
+    }
+  }
+}
