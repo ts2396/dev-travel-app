@@ -119,6 +119,7 @@ const getWeatherData = async (reqUrl, details, time, place) => {
 const getPictureDataUrl = async () => {
   const requestURLres = await fetch("http://localhost:8060/pictureURL");
   try {
+    // Transform into JSON
     const requestURL = await requestURLres.json();
     // return requestURL
     console.log(requestURL);
@@ -134,6 +135,7 @@ const getPlaceImage = async (reqURL, place) => {
   const requestUrl = `${reqURL.apiUrl}&q=${place}&image_type=photo`
   const request = await fetch(requestUrl);
   try {
+    // Transform into JSON
     const data = await request.json();
     // return allData;
     const image = data.hits.length && data.hits[0].webformatURL;
@@ -159,6 +161,7 @@ const postData = async (url='', data={}) => {
     if (response.status == 200) { return;}
   } catch (error) {
     console.log('error',error);
+    // appropriately handle the error
   }
 }
 
