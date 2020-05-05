@@ -1,22 +1,8 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
-
 <h3 align="center">Travel App</h3>
-
-<div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
-</div>
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> View weather for Travel planning.
     <br> 
 </p>
 
@@ -27,14 +13,13 @@
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+This project allows the user to input a date for a travel destination and gives back the numer of days until the trvel date and also displays a picture associated with the location and the current temperature. This app has the capability of expanding to show history weather for the date input. The user can also clear the input fields.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -42,53 +27,39 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+- NPM install
+- .env file in the root folder.
+- Create a file named .env in the root folder. 
+- Account with https://pixabay.com for API Key.
+- Account with https://www.weatherbit.io/ for API Key.
+- Account with http://api.geonames.org for picture display.
+- Add the provided API keys as follows in the .env file
 
-```
-Give examples
-```
+    -GN_ID=username
+
+    -WB_API_ID=######################
+    
+    -PB_API_ID=########-####################
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+Download or clone the repository from GitHub.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
+- Open a new terminal.
+- Input command  `npm i' enter.
+- Inut command `npm run build-dev` enter.
+- Input command  `npm run start` enter.
+- Go to your browser `localhost:8060` to view the app.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+1. Open a new terminal.
+2. Input command  `npm run test' enter.
 ```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+View the weather of a location for travel planning.
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
@@ -96,19 +67,14 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
+- [Webpack](https://webpack.js.org/) - Framework
 - [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+- [@tjshumate](https://github.com/ts2396) - Idea & Initial work
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- Hat tip to Udacity instructors.
