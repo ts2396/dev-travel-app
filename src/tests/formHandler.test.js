@@ -1,39 +1,9 @@
-import { dataValid } from '../client/js/formHandler'
+import {handleSubmit} from "../client/js/formHandler"
 
-test('Should return false if place is missing', () => {
-  global.alert = jest.fn();
-  expect(dataValid(null, 'test')).toBe(false);
-  expect(global.alert).toBeCalled();
+const regeneratorRuntime = require("regenerator-runtime");
+test ("It should return true", async() => {
+    expect(handleSubmit).toBeDefined();
 });
-
-test('Should return false if date is missing', () => {
-  global.alert = jest.fn();
-  expect(dataValid('test', null)).toBe(false);
-  expect(global.alert).toBeCalled();
+test ("It should be a function", async() => {
+    expect(typeof handleSubmit).toBe("function");
 });
-
-test('Should return false if date is in the past', () => {
-  global.alert = jest.fn();
-  expect(dataValid('test', '10/10/2019')).toBe(false);
-  expect(global.alert).toBeCalled();
-});
-
-test('Should return false if date is in the wrong format', () => {
-  global.alert = jest.fn();
-  expect(dataValid('test', '10-30-2020')).toBe(false);
-  expect(global.alert).toBeCalled();
-});
-
-test('Should return false if date is in the wrong format 2', () => {
-  global.alert = jest.fn();
-  expect(dataValid('test', '10.30.2020')).toBe(false);
-  expect(global.alert).toBeCalled();
-});
-
-test('Should return true if date is correctly formatted', () => {
-  expect(dataValid('test', '10/03/2020')).toBe(true);
-});
-
-test('Should return true if date is correctly formatted', () => {
-  expect(dataValid('test', '07/30/2020')).toBe(true);
-});4
