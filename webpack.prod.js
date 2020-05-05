@@ -29,12 +29,12 @@ module.exports = {
             {
                 test: /\.(jpg|png)$/,
                 use: {
-                  loader: 'url-loader',
+                    loader: 'url-loader',
                 },
             },
             {
                 test: /\.scss$/,
-                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
@@ -43,7 +43,7 @@ module.exports = {
             template: "./src/client/views/index.html",
             filename: "./index.html",
         }),
-        new MiniCssExtractPlugin({filename: '[name].css'}),
+        new MiniCssExtractPlugin({ filename: '[name].css' }),
         new WorkboxPlugin.GenerateSW(),
     ]
 }
