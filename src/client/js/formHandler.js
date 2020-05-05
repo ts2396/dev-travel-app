@@ -42,12 +42,12 @@ function handleSubmit(event) {
     .then(reqUrl => {
         getPlaceImage(reqUrl, place)
         .then(res => {
-            const imageBox = document.getElementById('placeImage');
+            const imagePlace = document.getElementById('placeImage');
             if (res.imageURL) {
-                imageBox.style.backgroundImage = `url(${res.imageURL})`;
+                imagePlace.style.backgroundImage = `url(${res.imageURL})`;
             } else {
-                imageBox.style.backgroundImage = '';
-                imageBox.classList.add("placeImage", "newImage");
+                imagePlace.style.backgroundImage = '';
+                imagePlace.classList.add("placeImage", "newImage");
             }
         })
     })
