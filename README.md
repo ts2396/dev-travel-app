@@ -53,9 +53,8 @@ Download or clone the repository from GitHub.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-1. Open a new terminal.
-2. Input command  `npm run test' enter.
-```
+- Open a new terminal.
+- Input command  `npm run test' enter.
 
 ## 🎈 Usage <a name="usage"></a>
 
