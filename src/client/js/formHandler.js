@@ -2,11 +2,12 @@ import { handleClear } from '../js/formReset'
 import { dateValid, getTDate, nullDays } from './checkers'
 const regeneratorRuntime = require("regenerator-runtime");
 
+
 const geoUsername = 'ts2396';
 function dataValid(place, date) {
     // check what text was put into the form field
     if (!place || !date) {
-        alert('* Please enter both place and depart date!')
+        alert('* Please enter location and depart date!')
         return false;
     } else if (!dateValid(date)) {
         alert('* Please enter date in the correct format!')
