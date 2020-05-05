@@ -7,6 +7,7 @@ import './styles/form.scss'
 import './styles/header.scss'
 import './styles/result.scss'
 
+
 document.addEventListener('DOMContentLoaded ', () => {
   //event listeners here
   const resetButton = document.getElementById('remove');
