@@ -2,10 +2,10 @@ function handleClear(event, onlyResults) {
   event.preventDefault();
   // check what text was put into the form field
   if (!onlyResults) {
-    let formText = document.getElementById('place');
-    formText.value = '';
-    let formText2 = document.getElementById('departDate');
-    formText2.value = '';
+    let formPlace = document.getElementById('place');
+    formPlace.value = '';
+    let formDepart = document.getElementById('departDate');
+    formDepart.value = '';
     const imageBox = document.getElementById('placeImage');
     imageBox.style.backgroundImage = '';
     imageBox.classList.add('placeImage', 'newImage');
