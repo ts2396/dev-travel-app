@@ -162,8 +162,7 @@ const postData = async (url='', data={}) => {
   }
 }
 
-/* Function to GET Project Data */
-
+/* Update UI */
 const updateUI = async () => {
     const placeDataRes = await fetch('http://localhost:8060/all');
     try {
