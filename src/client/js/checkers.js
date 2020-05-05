@@ -10,9 +10,9 @@ function getTDate(date) {
 }
 
 function nullDays(date1, date2) {
-  const oneDay = 1000 * 60 * 60 * 24;
-  const diffMs = Math.abs(date1 - date2);
-  return Math.round(diffMs / oneDay);
+  const day = 1000 * 60 * 60 * 24;
+  const mathAbs = Math.abs(date1 - date2);
+  return Math.round(mathAbs / day);
 }
 
 export { dateValid, getTDate, nullDays };
