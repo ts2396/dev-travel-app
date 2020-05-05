@@ -6,9 +6,9 @@ function handleClear(event, onlyResults) {
     formPlace.value = '';
     let formDepart = document.getElementById('departDate');
     formDepart.value = '';
-    const imageBox = document.getElementById('placeImage');
-    imageBox.style.backgroundImage = '';
-    imageBox.classList.add('placeImage', 'newImage');
+    const imagePlace = document.getElementById('placeImage');
+    imagePlace.style.backgroundImage = '';
+    imagePlace.classList.add('placeImage', 'newImage');
   }
   document.getElementById('placeDetail').innerHTML = '';
   document.getElementById('weather').innerHTML = `The Local Weather`;
