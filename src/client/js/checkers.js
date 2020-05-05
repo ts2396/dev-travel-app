@@ -15,4 +15,8 @@ function nullDays(date1, date2) {
   return Math.round(mathAbs / day);
 }
 
-export { dateValid, getTDate, nullDays };
+export {
+  dateValid
+  , getTDate
+  , nullDays
+};

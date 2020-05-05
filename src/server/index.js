@@ -1,4 +1,5 @@
-require('dotenv').config();
+require('dotenv')
+    .config();
 const weatherbitAPIKey = process.env.WB_API_ID;
 const pixabayApiKey = process.env.PB_API_ID;
 
@@ -13,11 +14,15 @@ const cors = require('cors');
 app.use(cors());
 
 let bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html', { root: '.' });
+    res.sendFile('dist/index.html', {
+        root: '.'
+    });
 });
 
 app.get('/weatherDetailsURL', appGetWeatherURL);
@@ -26,12 +31,16 @@ app.post('/weather', appPost);
 
 function appGetWeatherURL(req, res) {
     const url = `https://api.weatherbit.io/v2.0/forecast/daily?&key=${weatherbitAPIKey}`;
-    res.send({ apiUrl: url });
+    res.send({
+        apiUrl: url
+    });
 }
 
 function appGetPictureURL(req, res) {
     const url = `https://pixabay.com/api/?key=${pixabayApiKey}`;
-    res.send({ apiUrl: url });
+    res.send({
+        apiUrl: url
+    });
 }
 
 function appPost(req, res) {
@@ -41,6 +50,7 @@ function appPost(req, res) {
 }
 
 app.get('/all', appGet);
+
 function appGet(req, res) {
     res.send(projectData);
 }
@@ -55,6 +65,7 @@ app.listen(port, function () {
 });
 
 module.exports = {
-    appGetWeatherURL,
-    appGetPictureURL,
+    appGetWeatherURL
+    , appGetPictureURL
+    ,
 };
