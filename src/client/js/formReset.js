@@ -10,12 +10,20 @@ function handleClear(event, justResults) {
     imagePlace.style.backgroundImage = '';
     imagePlace.classList.add('placeImage', 'newImage');
   }
-  document.getElementById('placeDetail').innerHTML = '';
-  document.getElementById('weather').innerHTML = `The Local Weather`;
-  document.getElementById('temp').innerHTML = '';
-  document.getElementById('maxTemp').innerHTML = '';
-  document.getElementById('minTemp').innerHTML = '';
-  document.getElementById('details').innerHTML = '';
+  document.getElementById('placeDetail')
+    .innerHTML = '';
+  document.getElementById('weather')
+    .innerHTML = `The Local Weather`;
+  document.getElementById('temp')
+    .innerHTML = '';
+  document.getElementById('maxTemp')
+    .innerHTML = '';
+  document.getElementById('minTemp')
+    .innerHTML = '';
+  document.getElementById('details')
+    .innerHTML = '';
 }
 
-export { handleClear };
+export {
+  handleClear
+};

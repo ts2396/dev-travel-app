@@ -1,8 +1,15 @@
-import { handleClear } from '../js/formReset';
-import { dateValid, getTDate, nullDays } from './checkers';
+import {
+  handleClear
+} from '../js/formReset';
+import {
+  dateValid
+  , getTDate
+  , nullDays
+} from './checkers';
 const regeneratorRuntime = require('regenerator-runtime');
 
 const geoUsername = 'ts2396';
+
 function dataValid(place, date) {
   // check what text was put into the form field
   if (!place || !date) {
@@ -17,42 +24,48 @@ function dataValid(place, date) {
   }
   return true;
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   handleClear(event, true);
 
-  const place = document.getElementById('place').value;
-  const date = document.getElementById('departDate').value;
+  const place = document.getElementById('place')
+    .value;
+  const date = document.getElementById('departDate')
+    .value;
 
   if (!dataValid(place, date)) {
     return;
   }
 
-  getGeoNameInfo(place).then((placeDetails) => {
-    placeDetails &&
-      getWeatherDataUrl()
-        .then((reqUrl) =>
-          getWeatherData(reqUrl, placeDetails, getTDate(date), place)
-        )
-        .then((weatherDetails) =>
-          postData('http://localhost:8060/weather', weatherDetails)
-        )
-        .then(() => {
-          updateUI();
-        });
-  });
-
-  getPictureDataUrl(place).then((reqUrl) => {
-    getPlaceImage(reqUrl, place).then((res) => {
-      const imagePlace = document.getElementById('placeImage');
-      if (res.imageURL) {
-        imagePlace.style.backgroundImage = `url(${res.imageURL})`;
-      } else {
-        imagePlace.style.backgroundImage = '';
-        imagePlace.classList.add('placeImage', 'newImage');
-      }
+  getGeoNameInfo(place)
+    .then((placeDetails) => {
+      placeDetails &&
+        getWeatherDataUrl()
+          .then((reqUrl) =>
+            getWeatherData(reqUrl, placeDetails, getTDate(date), place)
+          )
+          .then((weatherDetails) =>
+            postData('http://localhost:8060/weather', weatherDetails)
+          )
+          .then(() => {
+            updateUI();
+          });
     });
-  });
+
+  getPictureDataUrl(place)
+    .then((reqUrl) => {
+      getPlaceImage(reqUrl, place)
+        .then((res) => {
+          const imagePlace = document.getElementById('placeImage');
+          if (res.imageURL) {
+            imagePlace.style.backgroundImage = `url(${res.imageURL})`;
+          } else {
+            imagePlace.style.backgroundImage = '';
+            imagePlace.classList.add('placeImage', 'newImage');
+          }
+        });
+    });
 }
 
 const getGeoNameInfo = async (place) => {
@@ -105,12 +118,13 @@ const getWeatherData = async (reqUrl, details, time, place) => {
     const dailyData =
       data && data.daily && data.daily.length && data.daily.data[0];
     const allData = {
-      place: details.place || place,
-      country_code: data.country_code || '',
-      numDay: nullDays(time, currentDate) || 0,
-      temp: data.data[0].temp || '',
-      min_temp: data.data[0].min_temp || '',
-      max_temp: data.data[0].max_temp || '',
+      place: details.place || place
+      , country_code: data.country_code || ''
+      , numDay: nullDays(time, currentDate) || 0
+      , temp: data.data[0].temp || ''
+      , min_temp: data.data[0].min_temp || ''
+      , max_temp: data.data[0].max_temp || ''
+      ,
     };
     console.log(allData);
     // Save data in server
@@ -145,7 +159,9 @@ const getPlaceImage = async (reqURL, place) => {
     // return allData;
     const image = data.hits.length && data.hits[0].webformatURL;
     console.log(image);
-    return { imageURL: image };
+    return {
+      imageURL: image
+    };
   } catch (error) {
     console.log('error', error);
   }
@@ -154,12 +170,14 @@ const getPlaceImage = async (reqURL, place) => {
 /* Function to POST data */
 const postData = async (url = '', data = {}) => {
   const response = await fetch(url, {
-    method: 'POST',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
+    method: 'POST'
+    , credentials: 'same-origin'
+    , headers: {
+      'Content-Type': 'application/json'
+      ,
+    }
+    , body: JSON.stringify(data)
+    ,
   });
   try {
     if (response.status == 200) {
@@ -178,20 +196,28 @@ const updateUI = async () => {
     const placeData = await placeDataRes.json();
     document.getElementById(
       'placeDetail'
-    ).innerHTML = `${placeData.place}, ${placeData.country_code} is ${placeData.numDay} days away!`;
-    document.getElementById('weather').innerHTML = `Local Weather`;
+    )
+      .innerHTML = `${placeData.place}, ${placeData.country_code} is ${placeData.numDay} days away!`;
+    document.getElementById('weather')
+      .innerHTML = `Local Weather`;
     document.getElementById(
       'temp'
-    ).innerHTML = `Current Temperature: ${placeData.temp}&#8457;`;
+    )
+      .innerHTML = `Current Temperature: ${placeData.temp}&#8457;`;
     document.getElementById(
       'maxTemp'
-    ).innerHTML = `Max: ${placeData.max_temp}&#8457;`;
+    )
+      .innerHTML = `Max: ${placeData.max_temp}&#8457;`;
     document.getElementById(
       'minTemp'
-    ).innerHTML = `Min: ${placeData.min_temp}&#8457`;
+    )
+      .innerHTML = `Min: ${placeData.min_temp}&#8457`;
   } catch (error) {
     console.log('error', error);
   }
 };
 
-export { handleSubmit, dataValid };
+export {
+  handleSubmit
+  , dataValid
+};
