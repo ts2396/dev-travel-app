@@ -1,7 +1,7 @@
-function handleClear(event, onlyResults) {
+function handleClear(event, justResults) {
   event.preventDefault();
   // check what text was put into the form field
-  if (!onlyResults) {
+  if (!justResults) {
     let formPlace = document.getElementById('place');
     formPlace.value = '';
     let formDepart = document.getElementById('departDate');
